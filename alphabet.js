@@ -16,8 +16,12 @@ nameEl.addEventListener("keyup", function(event) {
     if (event.key === 'Enter') {
      event.preventDefault();
      submitEl.click();
+    } else {
+        nameEl.addEventListener("keyup", start);
     }
 });
+
+
 
 let count = 7
 let counter = 7
@@ -88,6 +92,7 @@ console.log(diacritics)
 function start(){
     restart()
     let name = nameEl.value;
+    name = name.toLowerCase()
     let wordArray = name.split("");
     
     for (let i=0; i<wordArray.length; i++) {
